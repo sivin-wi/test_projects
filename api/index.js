@@ -17,5 +17,5 @@ app.get('/api',(req,res)=>{
 })
 
 
-app.listen(8080)
-// module.exports =  app;
+// app.listen(8080)
+module.exports =  app;
