@@ -1,14 +1,21 @@
-const server = require('express');
+const express = require('express');
+
+// dev time .env
+require('dotenv').config()
 
 const app = express()
+
+const url = process.env.REDIRECT_URL
 
 app.use((req,res,next)=>{ // logger
     console.log(`client request >> ${req.url} , ${req.method}`)
     next()
 })
 
-app.get('/',(req,res)=>{
-  res.redirect('http://google.com')
+app.get('/api',(req,res)=>{
+  res.redirect(url)
 })
 
-module.exports =  app;
+
+app.listen(8080)
+// module.exports =  app;
